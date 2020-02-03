@@ -60,7 +60,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('website.edit',compact('student'));
     }
 
     /**
@@ -70,9 +70,10 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(StoreRequest $request, Student $student)
     {
-        //
+     $student->update($request->all());
+     return redirect()->route('student.index')->with('success','Data updated Successfully');
     }
 
     /**

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>@yield('title')</title>
-		<link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
 </head>
 <body>
 	<div class="jumbotron" style="background-color: steelblue">

@@ -9,7 +9,7 @@
 		{{session()->get('success')}}
 	</div>
 	@endif
-	
+
 	<table class="table">
 		<thead>
 			<tr>
@@ -31,29 +31,29 @@
 				<td>{{$student->address}}</td>
 				<td>
 					<a href="{{route('student.show',$student->id)}}" class="btn btn-success">View</a>
-					
+
 				</td>
 				<td>
-					<a href="" class="btn btn-warning">Update</a>
-					
+					<a href="{{route('student.edit',$student->id)}}" class="btn btn-warning">Update</a>
+
 				</td>
 				<td>
 					<a href="" class="btn btn-danger">Delete</a>
-					
+
 				</td>
-				
+
 			</tr>
 			@endforeach
-			
+
 		</tbody>
 	</table>
 	<div class="d-flex justift-content-center align-items-center">
 		<div>
 			{{$std->links()}}
-			
+
 		</div>
-			
-		
+
+
 	</div>
 </div>
 @endsection
