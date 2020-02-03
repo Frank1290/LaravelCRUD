@@ -3,6 +3,12 @@
 @section('body')
 <div class="container">
 	<a href="{{route('student.create')}}" class="btn btn-primary">Add New Student</a>
+	<!-- flash message -->
+	@if(session()->has('success'))
+	<div class="alert alert-success">
+		{{session()->get('success')}}
+	</div>
+	@endif
 	
 	<table class="table">
 		<thead>
@@ -24,7 +30,7 @@
 				<td>{{$student->email}}</td>
 				<td>{{$student->address}}</td>
 				<td>
-					<a href="" class="btn btn-success">Insert</a>
+					<a href="" class="btn btn-success">View</a>
 					
 				</td>
 				<td>

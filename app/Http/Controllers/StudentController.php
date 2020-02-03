@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreRequest;
 
 class StudentController extends Controller
 {
@@ -34,9 +35,10 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+     Student::create($request->all());
+     return redirect()->route('student.index')->with('success','Data Inserted Successfully');
     }
 
     /**
