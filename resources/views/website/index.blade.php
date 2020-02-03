@@ -4,9 +4,9 @@
 <div class="container">
 	<a href="{{route('student.create')}}" class="btn btn-primary">Add New Student</a>
 	<!-- flash message -->
-	@if(session()->has('success'))
-	<div class="alert alert-success">
-		{{session()->get('success')}}
+	@if(session()->has('error'))
+	<div class="alert alert-danger">
+		{{session()->get('error')}}
 	</div>
 	@endif
 
@@ -38,7 +38,12 @@
 
 				</td>
 				<td>
-					<a href="" class="btn btn-danger">Delete</a>
+					<form method="post" action="{{route('student.destroy',$student->id)}}">
+						@csrf
+						@method('DELETE')
+						<input type="submit" name="Delete" value="Delete" class="
+						btn btn-danger">
+					</form>
 
 				</td>
 
