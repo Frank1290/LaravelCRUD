@@ -30,7 +30,7 @@
 				<td>{{$student->email}}</td>
 				<td>{{$student->address}}</td>
 				<td>
-					<a href="" class="btn btn-success">View</a>
+					<a href="{{route('student.show',$student->id)}}" class="btn btn-success">View</a>
 					
 				</td>
 				<td>

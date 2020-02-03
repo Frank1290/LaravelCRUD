@@ -15,7 +15,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $std=Student::latest()->paginate(2);
+        $std=Student::latest()->paginate(6);
         return view('website.index',compact('std'));
     }
 
@@ -49,7 +49,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return view('website.show',compact('student'));
     }
 
     /**
